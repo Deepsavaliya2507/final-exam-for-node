@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
-/** create restaurants */
-const createRestaurants = {
+/** create cart */
+const createCart = {
   body: Joi.object().keys({
     restaurant_name: Joi.string().required().trim(),
     restaurant_owner_name: Joi.string().required().trim(),
@@ -12,8 +12,8 @@ const createRestaurants = {
   }),
 };
 
-/** GEt restaurants list */
-const getRestaurantsList = {
+/** GEt cart list */
+const getCartList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),
     sortBy: Joi.string().trim().allow(""),
@@ -22,17 +22,17 @@ const getRestaurantsList = {
   }),
 };
 
-/** Get restaurants details by id */
+/** Get cart details by id */
 const getDetails = {
   params: Joi.object().keys({
-    restaurantsId: Joi.string().required().trim(),
+    cartId: Joi.string().required().trim(),
   }),
 };
 
-/** restaurants details update by id */
+/** cart details update by id */
 const updateDetails = {
   params: Joi.object().keys({
-    restaurantsId: Joi.string().required().trim(),
+    cartId: Joi.string().required().trim(),
   }),
   body: Joi.object().keys({
     first_name: Joi.string().trim(),
@@ -51,9 +51,9 @@ const sendMail = {
 };
 
 module.exports = {
-  createRestaurants,
+  createCart,
   getDetails,
-  getRestaurantsList,
+  getCartList,
   updateDetails,
   sendMail,
 };

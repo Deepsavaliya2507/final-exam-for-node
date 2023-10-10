@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
-const restaurantSchema = new mongoose.Schema(
+const cartSchema = new mongoose.Schema(
   {
-    restaurant_name: {
+    product: {
       type: String,
       trim: true,
     },
@@ -45,5 +45,5 @@ const restaurantSchema = new mongoose.Schema(
   }
 );
 
-const Restaurants = mongoose.model("restaurants", restaurantSchema);
-module.exports = Restaurants;
+const Cart = mongoose.model("cart", cartSchema);
+module.exports = Cart;

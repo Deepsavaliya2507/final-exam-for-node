@@ -1,6 +1,6 @@
 module.exports.userController = require("./user.controller");
-module.exports.restaurantsController = require("./restaurants.controller");
-module.exports.menuController = require("./menu.controller");
+module.exports.cartController = require("./cart.controller");
+module.exports.productController = require("./product.controller");
 module.exports.orderController = require("./order.controller");
 module.exports.restaurantcategoryController = require("./restaurantcategory.controller");
 module.exports.reviewController = require("./review.controller");

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const menuSchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
   {
     restaurants: {
       type: mongoose.Types.ObjectId,
@@ -18,6 +18,10 @@ const menuSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    quantity: {
+      type: Number,
+      trim: true,
+    },
     is_active: {
       type: Boolean,
       default: true,
@@ -29,5 +33,5 @@ const menuSchema = new mongoose.Schema(
   }
 );
 
-const Menu = mongoose.model("menu", menuSchema);
-module.exports = Menu;
+const Product = mongoose.model("product", productSchema);
+module.exports = Product;

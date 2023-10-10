@@ -1,7 +1,7 @@
 const Joi = require("joi");
 
-/** create menu */
-const createMenu = {
+/** create product */
+const createProduct = {
   body: Joi.object().keys({
     product_name: Joi.string().required().trim(),
     description: Joi.string().required().trim(),
@@ -9,8 +9,8 @@ const createMenu = {
   }),
 };
 
-/** GEt menu list */
-const getMenuList = {
+/** GEt product list */
+const getProductList = {
   query: Joi.object().keys({
     search: Joi.string().trim().allow(""),
     sortBy: Joi.string().trim().allow(""),
@@ -19,38 +19,28 @@ const getMenuList = {
   }),
 };
 
-/** Get menu details by id */
+/** Get product details by id */
 const getDetails = {
   params: Joi.object().keys({
-    menuId: Joi.string().required().trim(),
+    productId: Joi.string().required().trim(),
   }),
 };
 
-/** menu details update by id */
+/** product details update by id */
 const updateDetails = {
   params: Joi.object().keys({
-    menuId: Joi.string().required().trim(),
+    productId: Joi.string().required().trim(),
   }),
   body: Joi.object().keys({
     product_name: Joi.string().trim(),
     description: Joi.string().trim(),
     price: Joi.string().email().required(),
   }),
-};
-
-/** Send mail */
-const sendMail = {
-  body: Joi.object({
-    email: Joi.string().email().required(),
-    subject: Joi.string().required().trim(),
-    text: Joi.string().required().trim(),
-  }),
-};
+}
 
 module.exports = {
-  createMenu,
+  createProduct,
   getDetails,
-  getMenuList,
+  getProductList,
   updateDetails,
-  sendMail,
 };
