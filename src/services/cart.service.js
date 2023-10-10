@@ -27,7 +27,7 @@ const getCartList = async (filter, options) => {
  * @returns {Promise<cart>}
  */
 const getCartByEmail = async (email) => {
-  return cart.findOne({ email });
+  return cart.findOne({ email }).populate('first_id');
 };
 
 /**

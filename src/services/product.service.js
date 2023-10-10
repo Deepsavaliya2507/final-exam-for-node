@@ -27,7 +27,7 @@ const getProductList = async (filter, options) => {
  * @returns {Promise<product>}
  */
 const getProductByName = async (first_name) => {
-  return product.findOne({ first_name });
+  return product.findOne({ first_name }).populate('first_name');
 };
 
 /**
